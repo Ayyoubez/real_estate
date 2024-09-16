@@ -15,16 +15,22 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search..."
-            className="bg-transparent focus:outline-none h-6 w-20 sm:w-64"
+            className="font-normal bg-transparent focus:outline-none h-6 w-20 sm:w-64"
           />
           <FaSearch className="text-slate-600" />
         </form>
         <ul className="flex gap-4 font-bold">
           <Link to="/">
-            <li className="hidden sm:inline  hover:underline">Home</li>
+            <li className="hidden sm:inline  hover:underline">
+              Home
+            </li>
           </Link>
-          <Link to="/about"><li className="hidden sm:inline  hover:underline">About</li></Link>
-          <Link to="/sign-in"><li className="sm:inline  hover:underline">Sign in</li></Link>
+          <Link to="/about">
+            <li className="hidden sm:inline  hover:underline">About</li>
+          </Link>
+          <Link to="/sign-in">
+            <li className="sm:inline  hover:underline">Sign in</li>
+          </Link>
         </ul>
       </div>
     </header>
