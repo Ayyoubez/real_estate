@@ -26,6 +26,8 @@ export default function Profile() {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [showListingError, setShowListingError] = useState(false);
+  const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -112,6 +114,19 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
+  const handleShowListings = async () => {
+    try {
+      const res = await fetch(`/api/user/listings/${currentUser._id}`);
+      const data = await res.json();
+      if (data.success === false) {
+        setShowListingError(true);
+        return;
+      }
+      setUserListings(data);
+    } catch (error) {
+      setShowListingError(true);
+    }
+  };
   return (
     <div className="p-3  max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
@@ -171,7 +186,12 @@ export default function Profile() {
         >
           {loading ? "Loading... " : "Update"}
         </button>
-        <Link  className="bg-green-600 uppercase text-center hover:opacity-95 text-white p-3 rounded-lg" to={"/create-listing"}>Create Listing</Link>
+        <Link
+          className="bg-green-600 uppercase text-center hover:opacity-95 text-white p-3 rounded-lg"
+          to={"/create-listing"}
+        >
+          Create Listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span
@@ -188,6 +208,40 @@ export default function Profile() {
       <p className="text-green-700 mt-5">
         {updateSuccess ? "User Updated successfully " : ""}
       </p>
+      <button onClick={handleShowListings} className="text-green-700 w-full ">
+        Show listings
+      </button>
+      <p className="text-red-700 mt-5">
+        {showListingError ? "Error Listings" : ""}
+      </p>
+      {userListings &&
+        userListings.length > 0 &&
+        <div className="flex flex-col gap-4">
+        <h1 className="text-center my-7 text-2xl font-semibold">Your Listings</h1>
+        {userListings.map((listing) => (
+          <div
+            key={listing._id}
+            className="flex border rounded-lg p-3 justify-between items-center gap-4"
+          >
+            <Link to={`/listing/${listing._id}`}>
+              <img
+                className="h-16 w-18 object-contain " // Check the class names are correct
+                src={listing.imageUrls[0]}
+                alt="listing cover"
+              />
+            </Link>
+            <Link className="text-slate-700 font-semibold  flex-1 hover:underline truncate" to={`/listing/${listing._id}`}>
+              <p >
+                {listing.name}
+              </p>
+            </Link>
+            <div className="flex flex-col">
+              <button className="text-red-700">Delete</button>
+              <button className="text-green-700">Edit</button>
+            </div>
+          </div>
+        ))}
+         </div>}
     </div>
   );
 }
