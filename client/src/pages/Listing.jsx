@@ -95,8 +95,8 @@ const Listing = () => {
             <p className="text-2xl font-semibold">
               {listing.name} - ${" "}
               {listing.offer
-                ? listing.discountPrice?.toLocaleString("en-US") || "N/A"
-                : listing.regularPrice?.toLocaleString("en-US") || "N/A"}
+                ? listing.discountPrice?.toLocaleString("en-US") || "Price"
+                : listing.regularPrice?.toLocaleString("en-US") || "Price"}
               {listing.type === "rent" && " / month"}
             </p>
             <p className="flex items-center mt-6 gap-2 text-slate-600  text-sm">
