@@ -2,7 +2,6 @@
 
 Author : Ayyoub Ezzouine <Ayyoubez@gmail.com>
 
-
 ## Overview
 Kech Estate is a comprehensive real estate management platform designed to facilitate the buying, selling, and renting of properties. Our goal is to provide a user-friendly experience for both buyers and sellers, streamlining the process and making real estate transactions accessible to everyone.
 
@@ -40,6 +39,11 @@ Kech Estate is a comprehensive real estate management platform designed to facil
 ## Contributing 
 
   We welcome contributions from the community
+
+## Deployed Version 
+
+You can access the live version of **Kech Estate** at:
+**[KechEstate Live](https://real-estate-piop.onrender.com/)**
 
 
 
