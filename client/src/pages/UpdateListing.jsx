@@ -8,7 +8,7 @@ import {
   uploadBytesResumable,
   ref,
 } from "firebase/storage";
-// import {app} from
+
 
 export default function CreateListing() {
   const navigate = useNavigate();

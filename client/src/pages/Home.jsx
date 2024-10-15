@@ -45,41 +45,9 @@ export default function Home() {
      };
      fetchOfferListings();
    }, []);
-  // useEffect(() => {
-  //   const fetchOfferListing = async () => {
-  //     try {
-  //       const res = await fetch("/api/listing/get?offer=true&limit=4");
-  //       const data = await res.json();
-  //       setOfferListing(data);
-  //       fetchRentListing();
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   const fetchRentListing = async () => {
-  //     try {
-  //       const res = await fetch("/api/listing/get?type=rent&limit=4");
-  //       const data = await res.json();
-  //       setRentListing(data);
-  //       fetchSaleListing(); 
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //     const fetchSaleListing = async () => {
-  //       try {
-  //         const res = await fetch("/api/listing/get?type=sale&limit=4");
-  //         const data = await res.json();
-  //         setOfferListing(data);
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     };
-
-  //   fetchOfferListing();
-  // });
+ 
   return (
-    /*top*/
+   
     <div>
       <div className="flex flex-col gap-6 py-28 px-3 max-w-6xl mx-auto">
         <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">

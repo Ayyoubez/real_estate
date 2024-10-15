@@ -84,7 +84,7 @@ export default function Profile() {
       dispatch(updateUserFailure(error.message));
     }
   };
-  // console.log(formData);
+ 
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -244,7 +244,7 @@ export default function Profile() {
             >
               <Link to={`/listing/${listing._id}`}>
                 <img
-                  className="h-16 w-18 object-contain " // Check the class names are correct
+                  className="h-16 w-18 object-contain " 
                   src={listing.imageUrls[0]}
                   alt="listing cover"
                 />

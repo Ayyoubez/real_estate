@@ -1,9 +1,6 @@
-// import React from 'react'
 
-// import { list } from "firebase/storage";
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-// import { useSearchParams } from "react-router-dom";
+
 
 const Contact = ({ listing }) => {
   const [landlord, setLandlord] = useState(null);

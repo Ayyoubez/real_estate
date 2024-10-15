@@ -1,4 +1,4 @@
-// import React from 'react'
+
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -14,7 +14,7 @@ import {
   FaBath,
   FaBed,
   FaChair,
-  FaMapMarkedAlt,
+
   FaMapMarkerAlt,
   FaParking,
   FaShare,

@@ -26,10 +26,7 @@ export default function Header() {
     <header className="bg-slate-200 shadow-md">
       <div className="h-20 flex justify-between items-center max-w-6xl mx-auto p-3 text-slate-700 font-bold ">
         <Link to="/">
-          <h1 className="text-3xl sm:text-4xl flex flex-wrap">
-            <span className="text-slate-500">Kech</span>
-            <span className="text-slate-700">Estate</span>
-          </h1>
+          <img className="h-15 w-20" src="/logo.png" alt="logo"/>
         </Link>
         <form
           onSubmit={handleSubmit}
